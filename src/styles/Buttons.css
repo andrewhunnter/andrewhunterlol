@@ -1,0 +1,33 @@
+/* Social Buttons */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin: 0.5rem 0;
+}
+
+.social-button {
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.social-button::before {
+    display: none;
+}
+
+.social-button:hover {
+    transform: scale(1.2);
+    box-shadow: none;
+    background: none;
+}
+
+.social-button .iconify {
+    font-size: 1.8rem;
+    color: var(--primary-text);
+}

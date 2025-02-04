@@ -13,7 +13,7 @@
 }
 
 .benefit-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(20, 20, 20, 0.75);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
@@ -47,7 +47,7 @@
 }
 
 .offering-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(20, 20, 20, 0.75);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
@@ -61,11 +61,17 @@
 }
 
 .offering-card.premium {
-    background: linear-gradient(145deg, rgba(255, 107, 107, 0.1), rgba(255, 142, 142, 0.1));
+    background: linear-gradient(145deg, 
+        rgba(40, 20, 20, 0.85), 
+        rgba(60, 25, 25, 0.85)
+    );
 }
 
 .offering-card.free {
-    background: linear-gradient(145deg, rgba(47, 128, 237, 0.1), rgba(45, 156, 219, 0.1));
+    background: linear-gradient(145deg, 
+        rgba(20, 40, 60, 0.85), 
+        rgba(25, 45, 65, 0.85)
+    );
 }
 
 .offering-icon {
@@ -100,5 +106,145 @@
     .offerings-grid,
     .benefits-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+#vanta-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    border-bottom: 2px solid var(--primary-text);
+}
+
+.hero-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 4rem 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-section .subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+        min-height: 50vh;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.mouse-software {
+    width: 26px;
+    height: 42px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    position: relative;
+}
+
+.mouse-software::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(15px);
     }
 } 

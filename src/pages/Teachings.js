@@ -13,7 +13,7 @@ function Teachings() {
         
         if (mounted && vantaRef.current && !vantaEffect.current) {
             vantaEffect.current = window.VANTA.TOPOLOGY({
-                el: document.querySelector('.hero-section'),
+                el: vantaRef.current,
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,

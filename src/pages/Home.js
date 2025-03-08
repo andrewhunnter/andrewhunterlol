@@ -80,18 +80,18 @@ function Home() {
                             </div>
                         </section>
 
-                        {/* Experience Section */}
-                        <section id="experience" className="section">
-                            <h2>experience</h2>
-                            <p className="subtitle">career history and resume</p>
-                            <Timeline />
-                        </section>
-
                         {/* Portfolio Section */}
                         <section id="portfolio" className="section">
                             <h2>portfolio</h2>
                             <p className="subtitle">projects that have developed my skillset</p>
                             <Portfolio />
+                        </section>
+
+                        {/* Experience Section */}
+                        <section id="experience" className="section">
+                            <h2>experience</h2>
+                            <p className="subtitle">career history and resume</p>
+                            <Timeline />
                         </section>
                     </motion.div>
                 )}

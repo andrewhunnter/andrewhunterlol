@@ -1,26 +1,37 @@
 // App.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
-import Software from './pages/Software';
-import Teachings from './pages/Teachings';
 import './styles/Home.css';
 import './styles/Buttons.css';
+import './styles/animations.css';
 import Footer from './components/Footer';
+import LoadingAnimation from './components/LoadingAnimation';
 
 function App() {
     const location = useLocation();
+    const [isLoading, setIsLoading] = useState(false);
+    
+    useEffect(() => {
+        // Only show loading on route changes, not initial load
+        if (location.pathname !== window.location.pathname) {
+            setIsLoading(true);
+            const timer = setTimeout(() => {
+                // Loading will be handled by the LoadingAnimation component
+            }, 500);
+            return () => clearTimeout(timer);
+        }
+    }, [location.pathname]);
 
     return (
         <div>
+            <LoadingAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
             <Navbar />
             <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/software" element={<Software />} />
-                <Route path="/teachings" element={<Teachings />} />
             </Routes>
             <Footer />
         </div>

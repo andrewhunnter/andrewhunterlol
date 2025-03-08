@@ -15,19 +15,57 @@
     justify-content: center;
     align-items: center;
     transition: var(--transition);
+    position: relative;
+    padding: 0.5rem;
 }
 
 .social-button::before {
-    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
 }
 
 .social-button:hover {
-    transform: scale(1.2);
+    transform: translateY(-3px);
     box-shadow: none;
     background: none;
+}
+
+.social-button:hover::before {
+    transform: scale(1);
 }
 
 .social-button .iconify {
     font-size: 1.8rem;
     color: var(--primary-text);
+    transition: all 0.3s ease;
+}
+
+/* Add subtle color to each social icon on hover */
+.social-button.twitter:hover .iconify {
+    color: #1DA1F2;
+    filter: drop-shadow(0 0 5px rgba(29, 161, 242, 0.3));
+}
+
+.social-button.instagram:hover .iconify {
+    color: #E1306C;
+    filter: drop-shadow(0 0 5px rgba(225, 48, 108, 0.3));
+}
+
+.social-button.linkedin:hover .iconify {
+    color: #0077B5;
+    filter: drop-shadow(0 0 5px rgba(0, 119, 181, 0.3));
+}
+
+.social-button.github:hover .iconify {
+    color: #6e5494;
+    filter: drop-shadow(0 0 5px rgba(110, 84, 148, 0.3));
 }

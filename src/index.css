@@ -12,6 +12,17 @@
     --card-border: 1px solid rgba(255, 255, 255, 0.1);
     --card-radius: 10px;
     --transition: all 0.3s ease;
+    
+    /* Color pop variables */
+    --teal: #64FFDA;
+    --coral: #FF6B6B;
+    --purple: #7F7FD5;
+    --yellow: #FFB800;
+    --orange: #FF3366;
+    
+    /* Gradient variables */
+    --gradient-pop: linear-gradient(45deg, var(--teal), var(--coral), var(--purple));
+    --gradient-warm: linear-gradient(45deg, var(--orange), var(--coral), var(--yellow));
 }
 
 /* Global Styles */
@@ -34,14 +45,47 @@ h1, h2, h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
 }
 
 h1, h2 {
     font-size: 4rem;
 }
 
+h2 {
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--gradient-warm);
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
 h3 {
     font-size: 1.5rem;
+}
+
+/* Add subtle hover effect to section headings */
+section h2:hover {
+    background: var(--gradient-pop);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section h2:hover::after {
+    width: 60px;
+    opacity: 1;
+    background: var(--gradient-pop);
 }
 
 p {

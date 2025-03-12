@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SocialButtons from '../components/SocialButtons';
 import Timeline from '../components/Timeline';
 import Portfolio from '../components/Portfolio';
+import '../styles/Home.css';
 
 function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -43,12 +44,25 @@ function Home() {
                         <section id="home" className="section">
                             <div className="home-content">
                                 <motion.h1
+                                    className="home-title"
                                     initial={{ y: 10, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ duration: 0.5, delay: 0.2 }}
-                                    style={{ fontVariationSettings: "'wght' 600" }}
                                 >
-                                    andrewhunter
+                                    {Array.from("andrewhunter").map((letter, index) => (
+                                        <motion.span
+                                            key={index}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{
+                                                duration: 0.3,
+                                                delay: 0.3 + index * 0.05,
+                                                ease: "easeOut"
+                                            }}
+                                        >
+                                            {letter}
+                                        </motion.span>
+                                    ))}
                                 </motion.h1>
                                 <motion.p 
                                     className="subtitle"
@@ -56,7 +70,7 @@ function Home() {
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ duration: 0.5, delay: 0.3 }}
                                 >
-                                    creating software and sharing opportunities
+                                    creating ventures & chasing tech markets
                                 </motion.p>
                                 <motion.div
                                     initial={{ y: 10, opacity: 0 }}

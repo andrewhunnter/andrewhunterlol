@@ -44,15 +44,15 @@
 }
 
 .social-button .iconify {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--primary-text);
     transition: all 0.3s ease;
 }
 
 /* Add subtle color to each social icon on hover */
 .social-button.twitter:hover .iconify {
-    color: #1DA1F2;
-    filter: drop-shadow(0 0 5px rgba(29, 161, 242, 0.3));
+    color: #ffffff;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
 }
 
 .social-button.instagram:hover .iconify {
@@ -68,4 +68,37 @@
 .social-button.github:hover .iconify {
     color: #6e5494;
     filter: drop-shadow(0 0 5px rgba(110, 84, 148, 0.3));
+}
+
+/* Add these new styles for Telegram and TikTok */
+.social-button.telegram:hover .iconify {
+    color: #0088cc;
+    filter: drop-shadow(0 0 5px rgba(0, 136, 204, 0.3));
+}
+
+.social-button.tiktok:hover .iconify {
+    color: #ff0050;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 80, 0.3));
+}
+
+.social-buttons-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.social-heading {
+    font-size: 1.2rem;
+    color: var(--primary-text);
+    margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }

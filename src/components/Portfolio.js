@@ -10,9 +10,9 @@ function Portfolio() {
             title: 'carcodes.xyz',
             link: 'https://carcodes.xyz',
             image: '/carcodes-port.png',
-            description: 'Your gateway to community and opportunity. A membership where users get a public landing page and physical QR code attached to their page.',
+            description: 'A B2C SaaS platform for car enthusiasts to create vehicle landing pages with QR codes and discover car meets nationwide. Essentially a social network for cars and their owners.',
             icon: <FaGlobe style={{ color: '#64FFDA' }} />, // Teal
-            tech: ['NextJS', 'Stripe', 'MongoDB']
+            tech: ['NextJS', 'Stripe', 'MongoDB', 'AWS']
         },
         {
             title: 'pup hub',
@@ -43,7 +43,10 @@ function Portfolio() {
     return (
         <div className="portfolio-grid">
             {projects.map((project, index) => (
-                <div className="portfolio-card" key={index}>
+                <div 
+                    className="portfolio-card" 
+                    key={index}
+                >
                     <img src={project.image} alt={`${project.title} Project`} />
                     <a href={project.link} className="card-link" target="_blank" rel="noopener noreferrer">
                         <HiExternalLink size={20} color="white" />
@@ -58,7 +61,12 @@ function Portfolio() {
                         <p className="card-description">{project.description}</p>
                         <div className="card-tech">
                             {project.tech.map((tech, techIndex) => (
-                                <span key={techIndex} className="tech-tag">{tech}</span>
+                                <span 
+                                    key={techIndex} 
+                                    className="tech-tag"
+                                >
+                                    {tech}
+                                </span>
                             ))}
                         </div>
                     </div>

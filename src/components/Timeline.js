@@ -1,13 +1,21 @@
 // components/Timeline.js
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaStore, FaTshirt, FaUtensils } from 'react-icons/fa';
+import { FaStore, FaTshirt, FaUtensils, FaLaptopCode } from 'react-icons/fa';
 import '../styles/Timeline.css';
 
 function Timeline() {
     const experiences = [
         {
-            date: '2024 - PRESENT',
+            date: 'CURRENT',
+            title: 'serial founder',
+            company: 'self-employed',
+            description: 'Developed full-stack applications utilizing NextJS, Tailwind CSS, Expo Go, Cursor IDE, and other modern technologies to deliver exceptional digital experiences for clients.',
+            icon: <FaLaptopCode style={{ color: '#FFB800' }} />,
+            color: 'rgba(255, 184, 0, 0.1)'
+        },
+        {
+            date: 'AUG 2024 - DEC 2024',
             title: 'Retail Sales Advisor',
             company: 'Best Buy',
             description: 'Providing exceptional customer service skills by assisting customers with product inquiries and personalized recommendations.',

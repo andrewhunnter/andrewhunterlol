@@ -30,14 +30,6 @@ function Portfolio() {
             icon: <FaCode style={{ color: '#7F7FD5' }} />, // Purple
             tech: ['HTML', 'CSS', 'JavaScript', 'UI/UX']
         },
-        {
-            title: 'benbarnes.wav',
-            link: 'https://benbarnes-wav.vercel.app/',
-            image: '/benbarnes.png',
-            description: 'Developed a landing page for an artist using modern web technologies.',
-            icon: <FaCode style={{ color: '#7F7FD5' }} />, // Purple
-            tech: ['React', 'Vercel', 'UI/UX']
-        },
     ];
 
     return (
